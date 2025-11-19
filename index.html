@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Last Chance Motel – Official Site</title>
+
+  <!-- SEO -->
+  <meta name="description" content="In the neon shadow of a desert motel, strangers collide and a buried past claws back to life. Last Chance Motel starring Scout Taylor-Compton, Danielle Harris, Shane West.">
+  <meta name="keywords" content="Last Chance Motel, Scout Taylor-Compton, Danielle Harris, Shane West, horror, thriller, movie">
+  <meta property="og:title" content="Last Chance Motel - Official Site">
+  <meta property="og:description" content="In the neon shadow of a desert motel, strangers collide and a buried past claws back to life.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/last-chance-motel-poster.jpeg"><!-- replace with hosted poster URL -->
+  <meta property="og:url" content="https://your-domain.com"><!-- replace -->
+
+  <!-- Favicon (optional) -->
+  <link rel="icon" href="assets/favicon.png">
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <!-- Minimal custom styles -->
+  <style>
+    :root{
+      --neon:#ff2e8a;
+      --ink:#0b0b0f;
+      --rose:#2b0e18;
+      --paper:#f5e9f1;
+    }
+    body{background: var(--ink); color: var(--paper);}
+    a{color: var(--neon);}
+    .btn-neon{background: var(--neon); border-color: var(--neon); color:#fff;}
+    .btn-neon:hover{filter: brightness(1.05);}
+    .navbar{background: rgba(10,10,14,.75) !important; backdrop-filter: blur(6px);}
+    .hero{
+      position: relative;
+      min-height: 200vh;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(255,255,255,.1);
+    }
+    .hero::before {
+        content:"";
+        position:absolute; inset:0;
+        background:
+            linear-gradient(180deg, rgba(11,11,15,.35), rgba(11,11,15,.65)),
+            url("assets/last-chance-motel-poster.jpeg") top center/cover no-repeat;
+        filter: saturate(1.05) contrast(1.05);
+        z-index:-1;
+    }
+    .hero .container {
+        margin-top: 400px;   /* adjust to taste */
+    }
+    .logo-wordmark{
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
+      letter-spacing:.06em;
+      text-transform: uppercase;
+      font-weight: 800;
+      text-shadow: 0 0 18px rgba(255,46,138,.45);
+    }
+    .neon-stroke{
+      -webkit-text-stroke: 1px rgba(255,46,138,.75);
+      text-shadow:
+        0 0 8px rgba(255,46,138,.7),
+        0 0 18px rgba(255,46,138,.35);
+    }
+    .section{
+      padding: 72px 0;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      background: linear-gradient(180deg, rgba(43,14,24,.25), rgba(11,11,15,0));
+    }
+    .poster-shadow{
+      box-shadow: 0 12px 60px rgba(255,46,138,.18);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: .5rem;
+    }
+    .cast-photo {
+        width: 220px;         /* adjust to preferred width */
+        height: 300px;        /* adjust to preferred height */
+        object-fit: cover;    /* zoom/crop to fill the box */
+        object-position: top; /* optional—keeps face in frame */
+        border-radius: .5rem;
+        box-shadow: 0 8px 28px rgba(255,46,138,.18);
+        border: 1px solid rgba(255,255,255,.08);
+    }
+    .credit-list dd{opacity:.9}
+    .footer small{opacity:.7}
+    .badge-soft{background: rgba(255,46,138,.12); color:#ffd9ea; border:1px solid rgba(255,46,138,.35)}
+
+    @media (max-width: 576px) {
+    .hero {
+        min-height: 75vh; /* or smaller if you like */
+        padding-top: 140px; /* adjust so text isn't jammed at top */
+    }
+
+    .hero::before {
+        background:
+        linear-gradient(180deg, rgba(11,11,15,.35), rgba(11,11,15,.85)),
+        url("assets/last-chance-motel-poster.jpeg") top center/contain no-repeat;
+        background-color: #0b0b0f; /* fill the side gaps if there are any */
+        background-position: center 40px; /* pushes poster image downward */
+    }
+    .hero .container {
+        margin-top: 225px;   /* adjust to taste */
+    }
+    .hero h1,
+    .hero p.lead {
+        display: none;
+    }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Nav -->
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#top"><span class="neon-stroke">Last Chance Motel</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="nav" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#trailer">Trailer</a></li>
+          <li class="nav-item"><a class="nav-link" href="#synopsis">Synopsis</a></li>
+          <li class="nav-item"><a class="nav-link" href="#cast">Cast</a></li>
+          <!--<li class="nav-item"><a class="nav-link" href="#press">Press Kit</a></li>-->
+          <li class="nav-item ms-2"><a class="btn btn-sm btn-neon" href="#tickets">Get Tickets</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header id="top" class="hero">
+    <div class="container py-5">
+      <h1 class="display-4 logo-wordmark mb-3">LAST CHANCE MOTEL</h1>
+      <p class="lead col-lg-8 mx-auto">
+        <em>Love is forever. Survival isn't.</em>
+      </p>
+      <div class="d-flex gap-3 justify-content-center mt-3">
+        <a href="#tickets" class="btn btn-neon btn-lg">Get Tickets</a>
+        <!-- <button class="btn btn-outline-light btn-lg" data-bs-toggle="modal" data-bs-target="#trailerModal">
+          Watch Trailer
+        </button> -->
+      </div>
+
+      <!-- one-sheet / poster (optional visible on larger screens) -- >
+      <div class="mt-5 d-none d-md-block">
+        <img src="assets/last-chance-motel-poster.jpeg" alt="Last Chance Motel poster"
+             class="img-fluid poster-shadow" style="max-height: 68vh;"/>
+      </div>
+    -->
+    </div>
+  </header>
+
+  <!-- Trailer -- >
+  <section id="trailer" class="section">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-6">
+          <h2 class="h1 mb-3">Trailer</h2>
+          <p class="mb-4">Get a first look at the world of <strong>Last Chance Motel</strong>.</p>
+          <button class="btn btn-neon btn-lg" data-bs-toggle="modal" data-bs-target="#trailerModal">
+            Play Trailer
+          </button>
+        </div>
+        <!-- <div class="col-lg-6">
+          < !-- poster thumb acts as a teaser -- >
+          <img src="assets/last-chance-motel-poster.jpeg" class="img-fluid poster-shadow" alt="Trailer teaser">
+        </div> -- >
+      </div>
+    </div>
+  </section> -->
+
+  <!-- Synopsis -->
+  <section id="synopsis" class="section">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-7">
+          <h2 class="h1 mb-3">Synopsis</h2>
+          <p>
+            A newlywed couple's dream wedding spirals into a bloody nightmare when they uncover that their 
+            secluded venue - a desolate motel deep in the Nevada desert - is run by a relentless bloodthirsty 
+            family with dark secrets, revealing that one bride's future may not be all that it was promised to be.
+          </p>
+          <p class="mb-0">From two scream queens of character-driven genre fare comes a throwback thriller soaked in
+            desert neon and plenty of blood.</p>
+        </div>
+        <div class="col-lg-5">
+          <dl class="row credit-list">
+            <dt class="col-4">Starring</dt>
+            <dd class="col-8">Scout Taylor-Compton, Danielle Harris, Shane West, Heather Langenkamp</dd>
+
+            <dt class="col-4">Also Featuring</dt>
+            <dd class="col-8">Monica Keena, Sierra McCormick, Zachary Roozen</dd>
+
+            <dt class="col-4">Directed by</dt>
+            <dd class="col-8">Scout Taylor-Compton & Danielle Harris</dd>
+
+            <dt class="col-4">Written by</dt>
+            <dd class="col-8">Brandon Slagle</dd>
+
+            <dt class="col-4">Story by</dt>
+            <dd class="col-8">Scout Taylor-Compton & Danielle Harris</dd>
+
+            <dt class="col-4">Runtime</dt>
+            <dd class="col-8">87 minutes</dd>
+
+            <dt class="col-4">Rating</dt>
+            <dd class="col-8">R</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cast grid -->
+  <section id="cast" class="section">
+    <div class="container">
+      <h2 class="h1 mb-4 text-center">Cast</h2>
+      <div class="row g-4">
+        <!-- Duplicate and replace images/names as needed -->
+        <div class="col-6 col-md-4 col-lg-3 text-center">
+          <img class="img-fluid rounded poster-shadow cast-photo" src="https://m.media-amazon.com/images/M/MV5BOWY0N2UzYWMtZjNjMS00ODVkLTk4MDItYjUwYzZlZjdlMjEyXkEyXkFqcGc@._V1_FMjpg_UY1924_.jpg" alt="Scout Taylor-Compton">
+          <p class="mt-2 mb-0 fw-semibold">Scout Taylor-Compton</p>
+          <small class="text-muted">as Andy</small>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 text-center">
+          <img class="img-fluid rounded poster-shadow cast-photo" src="https://m.media-amazon.com/images/M/MV5BODhhOTMwNmQtNDRkMi00MjE3LWIxYzYtMzU4OTI2NjAyZmFhXkEyXkFqcGc@._V1_FMjpg_UX1170_.jpg" alt="Danielle Harris">
+          <p class="mt-2 mb-0 fw-semibold">Danielle Harris</p>
+          <small class="text-muted">as Casey</small>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 text-center">
+          <img class="img-fluid rounded poster-shadow cast-photo" src="https://m.media-amazon.com/images/M/MV5BYjVlMWVjMDEtNmM1OC00ZDAxLWE1YTAtYTU5ZWZiNzAxMTNhXkEyXkFqcGc@._V1_FMjpg_UX738_.jpg" alt="Shane West">
+          <p class="mt-2 mb-0 fw-semibold">Shane West</p>
+          <small class="text-muted">as Axel</small>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 text-center">
+          <img class="img-fluid rounded poster-shadow cast-photo" src="https://m.media-amazon.com/images/M/MV5BNGQ0ODZlNzEtODUwNy00M2QxLTlmNzUtODg5OWE4NjJkMDg4XkEyXkFqcGc@._V1_FMjpg_UY3000_.jpg" alt="Heather Langenkamp">
+          <p class="mt-2 mb-0 fw-semibold">Heather Langenkamp</p>
+          <small class="text-muted">as Bobby Love</small>
+        </div>
+        <!-- Add more cast cards as needed -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Tickets / Release -->
+  <section id="tickets" class="section">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-8">
+          <h2 class="h1 mb-3">Get Tickets</h2>
+          <p class="lead mb-3">Get tickets to the world premiere at the NYC Horror Film Festival!</p>
+          <!-- <p class="lead mb-3">Now playing in select theaters and On Demand.</p> -->
+          <div class="d-flex flex-wrap gap-3">
+            <a class="btn btn-neon btn-lg" href="https://nychff25.eventive.org/schedule/program-2-68e8a48425e98b903cfb6017" target="_blank" rel="noopener">Buy Tickets</a>
+            <!-- <a class="btn btn-outline-light btn-lg" href="https://ondemand.your-link.com" target="_blank" rel="noopener">Watch On Demand</a> -->
+          </div>
+        </div>
+        <!-- <div class="col-lg-4">
+          <div class="p-4 rounded-3 poster-shadow">
+            <h5 class="mb-2">Join the Mailing List</h5>
+            <form action="https://your-mailing-list-endpoint" method="post">
+              <label class="form-label" for="email">Email</label>
+              <input class="form-control mb-3" id="email" name="email" type="email" placeholder="you@example.com" required>
+              <button class="btn btn-neon w-100" type="submit">Subscribe</button>
+              <small class="d-block mt-2 text-muted">No spam. Unsubscribe anytime.</small>
+            </form>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Press Kit -->
+  <!--
+  <section id="press" class="section">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-7">
+          <h2 class="h1 mb-3">Press Kit & Assets</h2>
+          <p>Download official stills, the poster, logos, and the production notes.</p>
+          <div class="d-flex gap-3 flex-wrap">
+            <a class="btn btn-outline-light" href="assets/press-kit.zip">Press Kit (ZIP)</a>
+            <a class="btn btn-outline-light" href="assets/production-notes.pdf" target="_blank">Production Notes (PDF)</a>
+            <a class="btn btn-outline-light" href="assets/last-chance-motel-poster.jpeg" target="_blank">Poster (JPG)</a>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="d-flex gap-3">
+            <a class="btn btn-outline-light flex-fill" href="https://instagram.com/yourhandle" target="_blank" rel="noopener">Instagram</a>
+            <a class="btn btn-outline-light flex-fill" href="https://youtube.com/@yourchannel" target="_blank" rel="noopener">YouTube</a>
+            <a class="btn btn-outline-light flex-fill" href="mailto:press@your-domain.com">Contact</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  -->
+  <!-- Footer -->
+  <footer class="footer section pb-5">
+    <div class="container text-center">
+      <small>© <span id="year"></span> Last Chance Motel. All Rights Reserved.</small>
+    </div>
+  </footer>
+
+  <!-- Trailer Modal -->
+  <div class="modal fade" id="trailerModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content bg-black">
+        <div class="modal-header border-0">
+          <h5 class="modal-title">Official Trailer</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-0">
+          <div class="ratio ratio-16x9">
+            <!-- Replace with your YouTube/Vimeo embed -->
+            <iframe id="trailerFrame" src="" title="Trailer" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS (includes Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+          crossorigin="anonymous"></script>
+
+  <!-- Tiny enhancements -->
+  <script>
+    // Current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Lazy-load trailer when modal opens, and stop when closed
+    const trailerSrc = "https://www.youtube.com/embed/XXXXXXXX?rel=0&modestbranding=1&autoplay=1"; // replace
+    const modal = document.getElementById('trailerModal');
+    const frame = document.getElementById('trailerFrame');
+    modal.addEventListener('show.bs.modal', () => frame.src = trailerSrc);
+    modal.addEventListener('hidden.bs.modal', () => frame.src = "");
+  </script>
+</body>
+</html>
