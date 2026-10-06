@@ -118,6 +118,42 @@
     .platform-card .h4{font-weight:700;}
     .platform-card small{color: rgba(245,233,241,.65);}
 
+    /* Neon "Check In" scroll cue */
+    .check-in{
+      position: fixed; left: 50%; bottom: 28px; transform: translateX(-50%);
+      z-index: 1020; display: flex; flex-direction: column; align-items: center; gap: 6px;
+      text-decoration: none; color: #ffd9ea;
+      transition: opacity .4s ease, transform .4s ease;
+    }
+    .check-in:hover{ color:#fff; }
+    .check-in.is-hidden{ opacity: 0; transform: translate(-50%, 12px); pointer-events: none; }
+    .check-in-sign{
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
+      font-weight: 800; font-size: 1.1rem; letter-spacing: .3em; text-transform: uppercase;
+      padding: .55rem 1.1rem .55rem 1.4rem;
+      border: 2px solid var(--neon); border-radius: .4rem;
+      background: rgba(11,11,15,.55); backdrop-filter: blur(3px);
+      text-shadow: 0 0 6px var(--neon), 0 0 14px var(--neon), 0 0 28px rgba(255,46,138,.6);
+      box-shadow: 0 0 8px var(--neon), 0 0 22px rgba(255,46,138,.55), inset 0 0 10px rgba(255,46,138,.45);
+      animation: neon-flicker 4s infinite;
+    }
+    .check-in-arrow{
+      width: 14px; height: 14px; border-right: 2px solid var(--neon); border-bottom: 2px solid var(--neon);
+      transform: rotate(45deg); filter: drop-shadow(0 0 6px var(--neon));
+      animation: nudge 1.6s ease-in-out infinite;
+    }
+    @keyframes neon-flicker{
+      0%,18%,22%,25%,53%,57%,100%{ opacity:1; }
+      20%,24%,55%{ opacity:.35; }
+    }
+    @keyframes nudge{
+      0%,100%{ transform: translateY(0) rotate(45deg); }
+      50%{ transform: translateY(6px) rotate(45deg); }
+    }
+    @media (prefers-reduced-motion: reduce){
+      .check-in-sign, .check-in-arrow{ animation: none; }
+    }
+
     @media (max-width: 576px){
       .hero{
         min-height: 75vh;
@@ -134,6 +170,7 @@
       .hero h1,
       .hero p.lead{ display: none; }
       .cast-photo, .cast-placeholder{ height: 220px; }
+      .check-in{ display: none; } /* hero already fits on phones */
     }
   </style>
 </head>
@@ -159,7 +196,7 @@
 
   <!-- Hero -->
   <header id="top" class="hero">
-    <div class="container py-5">
+    <div id="check-in-target" class="container py-5">
       <h1 class="display-4 logo-wordmark mb-3">LAST CHANCE MOTEL</h1>
       <p class="lead col-lg-8 mx-auto"><em>Love is forever. Survival isn't.</em></p>
       <div class="d-flex flex-wrap gap-3 justify-content-center mt-3">
@@ -168,6 +205,12 @@
       </div>
     </div>
   </header>
+
+  <!-- Neon "Check In" cue: visible on first load, hides once the visitor scrolls -->
+  <a href="#check-in-target" class="check-in" id="checkIn" aria-label="Check in: scroll down">
+    <span class="check-in-sign">Check In</span>
+    <span class="check-in-arrow" aria-hidden="true"></span>
+  </a>
 
   <!-- Watch at home -->
   <section id="watch" class="section">
@@ -262,7 +305,7 @@
       <div class="row g-4 justify-content-center">
         <!-- To add a photo: upload it to assets/cast/ with the filename below. Until then, initials are shown. -->
         <div class="col-6 col-md-4 col-lg-3 text-center">
-          <img class="cast-photo" src="https://m.media-amazon.com/images/M/MV5BOWY0N2UzYWMtZjNjMS00ODVkLTk4MDItYjUwYzZlZjdlMjEyXkEyXkFqcGc@._V1_FMjpg_UY1924_.jpg" alt="Scout Taylor-Compton" loading="lazy" data-initials="SC">
+          <img class="cast-photo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQs0pIThyheGs1TjeqJxcgaodOURijgNbYHJ5Bix71bLg&amp;s=10" alt="Scout Taylor-Compton" loading="lazy" data-initials="SC">
           <p class="mt-2 mb-0 fw-semibold">Scout Taylor-Compton</p>
           <small class="cast-role">as Andi</small>
         </div>
@@ -277,17 +320,17 @@
           <small class="cast-role">as Bobbi Love</small>
         </div>
         <div class="col-6 col-md-4 col-lg-3 text-center">
-          <img class="cast-photo" src="https://m.media-amazon.com/images/M/MV5BYjVlMWVjMDEtNmM1OC00ZDAxLWE1YTAtYTU5ZWZiNzAxMTNhXkEyXkFqcGc@._V1_FMjpg_UX738_.jpg" alt="Shane West" loading="lazy" data-initials="SW">
+          <img class="cast-photo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJHdj1ac8pWd74lj7syGJcRYDPgyK_fqmfwVyQHH-C-G-RLYd2GP9g6OncTP8NRhy-5V7pmJeCmds7sfmxGMgPjxZNsDdptGWfPinYQA" alt="Shane West" loading="lazy" data-initials="SW">
           <p class="mt-2 mb-0 fw-semibold">Shane West</p>
           <small class="cast-role">as Axel</small>
         </div>
         <div class="col-6 col-md-4 col-lg-3 text-center">
-          <img class="cast-photo" src="assets/cast/monica-keena.jpg" alt="Monica Keena" loading="lazy" data-initials="MK">
+          <img class="cast-photo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwY0XCw4ShA9Kg_Q_oV0XtoeSAXdNqUA_O5SfSXbG0Pb5isTz2cxhM28k" alt="Monica Keena" loading="lazy" data-initials="MK">
           <p class="mt-2 mb-0 fw-semibold">Monica Keena</p>
           <small class="cast-role">as Sugar</small>
         </div>
         <div class="col-6 col-md-4 col-lg-3 text-center">
-          <img class="cast-photo" src="assets/cast/sierra-mccormick.jpg" alt="Sierra McCormick" loading="lazy" data-initials="SM">
+          <img class="cast-photo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjxDM9orj5aAs_swjjxMOx1xq0Nu20yVM3wkWxmfNw6RZjIpTB8PmvnzF-" alt="Sierra McCormick" loading="lazy" data-initials="SM">
           <p class="mt-2 mb-0 fw-semibold">Sierra McCormick</p>
           <small class="cast-role">as Betty</small>
         </div>
@@ -340,6 +383,12 @@
     const frame = document.getElementById('trailerFrame');
     modal.addEventListener('show.bs.modal', () => frame.src = trailerSrc);
     modal.addEventListener('hidden.bs.modal', () => frame.src = "");
+
+    // Hide the "Check In" cue once the visitor starts scrolling
+    const checkIn = document.getElementById('checkIn');
+    const toggleCheckIn = () => checkIn.classList.toggle('is-hidden', window.scrollY > 40);
+    window.addEventListener('scroll', toggleCheckIn, { passive: true });
+    toggleCheckIn();
 
     // Cast photo fallback: show initials if an image is missing
     document.querySelectorAll('img.cast-photo').forEach(img => {
